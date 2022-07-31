@@ -6,14 +6,13 @@ import {
   SCORE_SORT,
   SEARCH_RECIPE,
   GET_DIET_TYPES,
-  LOCAL_HOST,
 } from "./types";
 import axios from "axios";
 
 export function getRecipes() {
   return function (dispatch) {
     axios
-      .get(`${LOCAL_HOST}/recipes`)
+      .get(`/recipes`)
       .then((response) => {
         return dispatch({ type: GET_RECIPES, payload: response.data });
       })
@@ -26,7 +25,7 @@ export function getRecipes() {
 export function getRecipesName(payload) {
   return async function (dispatch) {
     try {
-      var response = await axios.get(`${LOCAL_HOST}/recipes?name=${payload}`);
+      var response = await axios.get(`/recipes?name=${payload}`);
       return dispatch({ type: SEARCH_RECIPE, payload: response.data });
     } catch {
       return alert("recipe not found");
@@ -37,7 +36,7 @@ export function getRecipesName(payload) {
 export function getRecipeDetails(payload) {
   return async function (dispatch) {
     try {
-      var response = await axios.get(`${LOCAL_HOST}/recipes/${payload}`);
+      var response = await axios.get(`/recipes/${payload}`);
       return dispatch({ type: GET_RECIPE_DETAILS, payload: response.data });
     } catch (error) {
       console.log(error);
@@ -48,7 +47,7 @@ export function getRecipeDetails(payload) {
 export function getDietTypes() {
   return async function (dispatch) {
     try {
-      var response = await axios.get(`${LOCAL_HOST}/types`);
+      var response = await axios.get(`/types`);
       return dispatch({
         type: GET_DIET_TYPES,
         payload: response.data.map((diet) => diet.name),
@@ -63,7 +62,7 @@ export function addRecipe(payload) {
   console.log(payload);
   return async function () {
     try {
-      var response = await axios.post(`${LOCAL_HOST}/recipes`, payload);
+      var response = await axios.post(`/recipes`, payload);
       return response;
     } catch (error) {
       console.log(error);
