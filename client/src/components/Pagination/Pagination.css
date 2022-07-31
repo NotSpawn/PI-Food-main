@@ -1,0 +1,35 @@
+.pagination {
+  justify-content: center;
+  padding: 10px 5px 5px;
+  width: 500px;
+  margin-top: 1em;
+}
+
+.pages {
+  display: flex;
+  height: 30px;
+  list-style-type: none;
+  justify-content: space-evenly;
+  padding: 0 20px 4px;
+}
+
+.page {
+  list-style-type: none;
+}
+
+.pageBtn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: #ff4f87;
+  border-color: rgb(231, 218, 218);
+  box-shadow: #ff4f87;
+  color: white;
+  font-style: italic;
+  font-weight: 700;
+  border-radius: 7px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 600;
+}
