@@ -22,7 +22,7 @@ const { conn } = require("./src/db.js");
 const addTypeOfDiets = require("./src/utils/getdbdiets");
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   addTypeOfDiets();
   server.listen(process.env.PORT, () => {
     console.log("%s listening at 3001"); // eslint-disable-line no-console
