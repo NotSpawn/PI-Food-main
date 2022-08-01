@@ -4,6 +4,8 @@ const addTypeOfDiets = async () => {
   if (!(await Diet.findAll()).length) {
     const TypesOfDiets = [
       { name: "vegetarian" },
+      { name: "ketogenic" },
+      { name: "low fodmap" },
       { name: "lacto vegetarian" },
       { name: "ovo vegetarian" },
       { name: "lacto ovo vegetarian" },

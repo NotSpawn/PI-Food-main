@@ -7,3 +7,4 @@ export const ALPHABETICAL_SORT = "ALPHABETICAL_SORT";
 export const SCORE_SORT = "SCORE_SORT";
 export const SEARCH_RECIPE = "SEARCH_RECIPE";
 export const ADD_RECIPE = "ADD_RECIPE";
+export const FILTER_CREATED = "FILTER_CREATED";

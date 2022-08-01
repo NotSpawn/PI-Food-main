@@ -6,6 +6,7 @@ import {
   dietTypeFilter,
   alphabeticalSort,
   scoreSort,
+  filterCreated,
 } from "../../actions/index";
 import Card from "../RecipeCard/Card";
 import Pagination from "../Pagination/Pagination";
@@ -44,6 +45,12 @@ export default function Home() {
   function handleDietTypeFilter(e) {
     e.preventDefault();
     dispatch(dietTypeFilter(e.target.value));
+    setPage(1);
+  }
+
+  function handleFilterCreated(e) {
+    e.preventDefault();
+    dispatch(filterCreated(e.target.value));
     setPage(1);
   }
 
@@ -90,6 +97,15 @@ export default function Home() {
           <option disabled>Score</option>
           <option value="asc">From Min to Max</option>
           <option value="desc">From Max to Min</option>
+        </select>
+        <select
+          className="select"
+          name="created"
+          onChange={(e) => handleFilterCreated(e)}
+        >
+          <option disabled>All</option>
+          <option value="created">Created</option>
+          <option value="api">Api</option>
         </select>
         <label className="filters">Diet Types:</label>
         <select

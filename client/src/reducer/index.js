@@ -7,6 +7,7 @@ import {
   SEARCH_RECIPE,
   GET_DIET_TYPES,
   GET_RECIPE_DETAILS,
+  FILTER_CREATED,
 } from "../actions/types";
 
 const initialState = {
@@ -82,6 +83,17 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         recipes: sortedRecipesByScore,
+      };
+
+    case FILTER_CREATED:
+      const allRec = state.allRecipes;
+      const createdFilter =
+        action.payload === "created"
+          ? allRec.filter((el) => el.createdInDb)
+          : allRec.filter((el) => !el.createdInDb);
+      return {
+        ...state,
+        recipes: createdFilter,
       };
 
     case SEARCH_RECIPE:

@@ -36,6 +36,11 @@ module.exports = (sequelize) => {
       steps: {
         type: DataTypes.JSON,
       },
+      createdInDb: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
     },
     {
       timestamps: false,

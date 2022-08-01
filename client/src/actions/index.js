@@ -70,6 +70,13 @@ export function addRecipe(payload) {
   };
 }
 
+export function filterCreated(payload) {
+  return {
+    type: "FILTER_CREATED",
+    payload,
+  };
+}
+
 export function dietTypeFilter(payload) {
   return {
     type: DIET_TYPE_FILTER,

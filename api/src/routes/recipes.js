@@ -40,6 +40,7 @@ router.post("/", async (req, res, next) => {
       image,
       readyInMinutes,
       servings,
+      createdInDb,
     } = req.body;
 
     const newRecipe = await Recipe.create({
@@ -50,6 +51,7 @@ router.post("/", async (req, res, next) => {
       readyInMinutes,
       servings,
       steps,
+      createdInDb,
     });
 
     let dietTypesRecipeDb = await Diet.findAll({
