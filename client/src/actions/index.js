@@ -6,6 +6,7 @@ import {
   SCORE_SORT,
   SEARCH_RECIPE,
   GET_DIET_TYPES,
+  FILTER_CREATED,
 } from "./types";
 import axios from "axios";
 
@@ -72,7 +73,7 @@ export function addRecipe(payload) {
 
 export function filterCreated(payload) {
   return {
-    type: "FILTER_CREATED",
+    type: FILTER_CREATED,
     payload,
   };
 }
