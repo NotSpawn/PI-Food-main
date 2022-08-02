@@ -11,7 +11,7 @@ function Landing() {
         dinners to holiday feasts.
       </h2>
       <Link to="/home">
-        <button className="homeBtn">Try it </button>
+        <button className="homeBtn">Try it</button>
       </Link>
     </div>
   );
