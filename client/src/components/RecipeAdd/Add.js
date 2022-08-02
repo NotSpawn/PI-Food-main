@@ -8,7 +8,7 @@ import "./Add.css";
 function validate(input) {
   const errors = {};
   if (!input.name) errors.name = "Requires a name";
-  if (!input.image) errors.name = "Requires an image";
+  if (!input.image) errors.image = "Requires an image";
   if (!input.summary) errors.summary = "Requires a summary";
   if (input.healthScore < 1 || input.healthScore > 100)
     errors.healthScore = "The score must be a number between 1 and 100";

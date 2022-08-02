@@ -6,7 +6,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
+  background-size: cover;
+  height: 790px;
+  background-image: url("https://img.freepik.com/free-photo/ingredients-cooking-gray-concrete_127032-2082.jpg?w=2000");
 }
 
 .homeBtn {
@@ -30,13 +32,17 @@ body {
 }
 
 .landing-title {
-  font-size: 50px;
+  color: #fff;
+  font-style: italic;
+  position: relative;
+  font-size: 115px;
+  text-shadow: 6px 4px 5px rgba(0, 0, 0, 0.43);
 }
 .landing-msg {
   display: flex;
   font-size: 30px;
   padding: 7px;
-  color: black;
+  color: #fff;
   font-style: italic;
   font-weight: 700;
   text-shadow: 6px 4px 5px rgba(0, 0, 0, 0.43);
