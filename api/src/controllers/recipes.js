@@ -1,16 +1,16 @@
-//const axios = require("axios");
+const axios = require("axios");
 const { Recipe, Diet } = require("../db");
-// const { API_KEY } = process.env;
-const food = require("../../food.json");
+const { API_KEY } = process.env;
+// const food = require("../../food.json");
 
 const getApi = async () => {
-  // const resp = (
-  //   await axios.get(
-  //     `https://api.spoonacular.com/recipes/complexSearch?${API_KEY}&addRecipeInformation=true&number=100`
-  //   )
-  // ).data.results;
+  const resp = (
+    await axios.get(
+      `https://api.spoonacular.com/recipes/complexSearch?${API_KEY}&addRecipeInformation=true&number=100`
+    )
+  ).data.results;
 
-  const resp = food.results;
+  // const resp = food.results;
 
   const apiInfo = await resp.map((recipe) => {
     return {
